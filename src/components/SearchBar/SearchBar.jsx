@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import css from './SearchBar.module.css'
+import { BsSearch } from "react-icons/bs";
+// import { FiSearch } from 'react-icons/fi';
 
 const SearchBar = ({onSubmit}) => {
   const [query, setQuery] = useState('');
@@ -17,9 +20,10 @@ const SearchBar = ({onSubmit}) => {
   };
 
   return (
-    <header>
-      <form onSubmit={handleSubmit}>
+    <header className={css.header}>
+      <form className={css.form} onSubmit={handleSubmit}>
         <input
+          className={css.input}
           type="text"
           autoComplete="off"
           autoFocus
@@ -27,7 +31,7 @@ const SearchBar = ({onSubmit}) => {
           onChange={inputChange}
           value={query}
         />
-        <button type="submit">Search</button>
+        <button className={css.button} type="submit"><BsSearch size="20px"/></button>
       </form>
     </header>
   );

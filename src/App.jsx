@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { fetchPhotos } from './apiService/imageApi';
 import SearchBar from "./components/SearchBar/SearchBar";
-import ImageGallery  from "./components/ImageGallery/ImageGallery";
+import ImageGallery from "./components/ImageGallery/ImageGallery";
 // import './App.css'
 
 

@@ -1,13 +1,14 @@
 
 import ImageCard from "../ImageCard/ImageCard";
+import css from './ImageGallery.module.css'
 
 const ImageGallery = ({ images }) => {
   console.log(images);
   
   return (    
-    <ul>
+    <ul className={css.list}>
       {images.map((image) => (
-        <li key={image.id}>
+        <li className={css.item} key={image.id}>
           {/* Передаємо зображення у компонент ImageCard */}
           <ImageCard small={image.urls.small}
             regular={image.urls.regular}

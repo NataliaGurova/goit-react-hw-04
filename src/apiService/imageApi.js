@@ -9,7 +9,7 @@ axios.defaults.baseURL = 'https://api.unsplash.com/';
 axios.defaults.params = {
     client_id: API_KEY,
     orientation: 'landscape',
-    per_page: 15,
+    per_page: 12,
 };
 
 export const fetchPhotos = async (query, page) => {
