@@ -1,5 +1,7 @@
 
-const ImageCard = ({small, regular, alt}) => {
+const ImageCard = ({ small, regular, alt }) => {
+  console.log(small);
+  
   return (
     <div>
   <img src={small} alt={alt} />
