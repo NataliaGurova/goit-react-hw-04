@@ -2,7 +2,6 @@ import { useState } from 'react'
 import css from './SearchBar.module.css'
 import { BsSearch } from "react-icons/bs";
 import {toast} from 'react-hot-toast';
-// import { FiSearch } from 'react-icons/fi';
 
 const SearchBar = ({onSubmit}) => {
   const [query, setQuery] = useState('');
@@ -14,15 +13,13 @@ const SearchBar = ({onSubmit}) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(query);
     // Викликаем функцію пропс і записуємо в form
 
     if (!query.trim()) {
       toast("Please enter search images and photos!");
-return
-    
+      return;  
     } onSubmit(query);
-    setQuery("");
+      setQuery("");
   };
 
   return (

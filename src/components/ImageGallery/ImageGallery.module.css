@@ -6,17 +6,3 @@ display: flex;
   gap: 20px 20px;
 
 }
-
-.item {
-  display: flex;
-  border: 1px solid transparent;
-padding: 0;
-  width: 304px;
-    height: 152px;
-
-    cursor: pointer;
-
-    position: relative;
-    overflow: hidden;
- 
-}

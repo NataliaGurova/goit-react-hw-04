@@ -32,11 +32,9 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 export const ImageModal = ({ images, isOpen, onRequestClose }) => {
- 
-console.log(images);
 
     return (
-		 <Modal
+		<Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Image Modal"

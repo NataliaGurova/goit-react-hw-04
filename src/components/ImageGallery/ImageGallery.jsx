@@ -3,7 +3,6 @@ import ImageCard from "../ImageCard/ImageCard";
 import css from './ImageGallery.module.css'
 
 const ImageGallery = ({ images, onClick }) => {
-  console.log(images);
   
   return (    
     <ul className={css.list}>
