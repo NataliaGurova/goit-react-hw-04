@@ -169,3 +169,11 @@ const API_KEY = 'CiYbYfeKy1jv8indJhhf6vm3xolSsoXblOTrxmzC1Go';
   //   console.log(query);
     
     // };
+
+
+   if (inputValue) {
+    onSubmit(query);
+    setQuery("");
+    } else {
+      
+  }

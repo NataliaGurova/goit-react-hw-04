@@ -4,12 +4,12 @@ import Modal from 'react-modal';
 const customStyles = {
 
   overlay: {
+    position: "fixed",
     backgroundColor: "rgba(0, 0, 0, 0.7)",
+
   },
   content: {
-    padding: "0",
-    margin: "20px",
-
+    position: "absolute",
     top: "50%",
     left: "50%",
     right: "auto",
@@ -17,11 +17,15 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     maxWidth: "90vw",
-    // maxHeight: "90vh",
+    maxHeight: "90vh",
     // overflow: "auto",
-    // overflow: "hidden",
+    overflow: "hidden",
     objectFit: "cover",
     border: "none",
+    borderRadius: "0",
+    padding: "0",
+    margin: "20px",
+    
   },
 };
 

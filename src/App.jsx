@@ -7,7 +7,8 @@ import { LoadMoreBtn } from "./components/LoadMoreBtn/LoadMoreBtn"
 import { Loader } from "./components/Loader/Loader";
 import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage";
 import { ImageModal } from "./components/ImageModal/ImageModal";
-import './App.css'
+import { Toaster } from "react-hot-toast";
+// import './App.css'
 
 
 
@@ -71,7 +72,8 @@ const App = () => {
       {totalPages > 0 && images.length < totalPages && <LoadMoreBtn onClick={handleLoadMore}>Load more</LoadMoreBtn>}
       <ImageModal images={selectedImage}
       isOpen={modalIsOpen} 
-      onRequestClose={closeModal}/>
+        onRequestClose={closeModal} />
+      <Toaster />
     </div>
   );
 }
