@@ -1,6 +1,6 @@
 
 .item {
-   display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -9,18 +9,14 @@
 
   background-color: var(--color-light);
 
-  border: 4px solid #fff;
-  border-radius: 10px;
+  /* border: 4px solid #fff; */
+  border-radius: 5px;
   overflow: hidden;
-      object-fit: cover;
-  /* display: flex; */
+  object-fit: cover;
+
   /* border: 1px solid transparent; */
 /* 
   width: 360px;
     height: 154px;
-    object-fit: cover; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+   */
 }

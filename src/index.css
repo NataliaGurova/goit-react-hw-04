@@ -9,7 +9,11 @@ body {
 /* background: linear-gradient(180deg, rgba(183,230,255,1) 0%, rgba(183,230,255,1) 19%, rgba(255,255,255,1) 39%, rgba(255,255,255,1) 100%); */
   min-height: 100vh;
 
-  font-style: normal;
+  /* font-style: normal;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh; */
 }
 
 h1,

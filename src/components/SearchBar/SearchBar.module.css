@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 background: linear-gradient(180deg, rgba(183,230,255,1) 0%, rgba(183,230,255,1) 19%, rgba(255,255,255,1) 100%);
 }
@@ -20,7 +21,8 @@ background: linear-gradient(180deg, rgba(183,230,255,1) 0%, rgba(183,230,255,1) 
   background-color: transparent;
 
   padding: 16px;
-  /* padding-right: 40px; */
+  padding-right: 0;
+  
   outline: none;
 
   transition: var(--animation-cubicBezier);

@@ -2,7 +2,7 @@
 import ImageCard from "../ImageCard/ImageCard";
 import css from './ImageGallery.module.css'
 
-const ImageGallery = ({ images }) => {
+const ImageGallery = ({ images, onClick }) => {
   console.log(images);
   
   return (    
@@ -12,7 +12,8 @@ const ImageGallery = ({ images }) => {
           {/* Передаємо зображення у компонент ImageCard */}
           <ImageCard small={image.urls.small}
             regular={image.urls.regular}
-            alt={image.alt_description} />
+            alt={image.alt_description}
+            onClick={() => onClick(image.urls.regular)}/>
         </li>
       ))}
     </ul>);

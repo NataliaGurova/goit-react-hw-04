@@ -1,11 +1,11 @@
 import css from "./ImageCard.module.css"
 
-const ImageCard = ({ small, regular, alt }) => {
+const ImageCard = ({ small, regular, alt, onClick }) => {
   console.log(small);
   
   return (
     <div className={css.item}>
-      <img src={small} alt={alt} />
+      <img src={small} alt={alt} onClick={onClick} />
     </div>
   )
 }

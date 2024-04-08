@@ -13,14 +13,10 @@ axios.defaults.params = {
 };
 
 export const fetchPhotos = async (query, page) => {
-  try {
-      const { data } = await axios.get(`search/photos?page=${page}&query=${query}`);
+
+const { data } = await axios.get(`search/photos?page=${page}&query=${query}`);
       console.log(data);
     return data;
-  } catch (error) {
-    console.error('Error fetching photos:', error);
-    throw error; // Прокидуємо помилку для подальшої обробки
-  }
 };
 
 
