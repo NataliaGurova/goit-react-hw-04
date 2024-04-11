@@ -3,7 +3,7 @@ import css from './SearchBar.module.css'
 import { BsSearch } from "react-icons/bs";
 import {toast} from 'react-hot-toast';
 
-const SearchBar = ({onSubmit}) => {
+const SearchBar = ({onSearch}) => {
   const [query, setQuery] = useState('');
 
   const inputChange = (evt) => {
@@ -18,7 +18,7 @@ const SearchBar = ({onSubmit}) => {
     if (!query.trim()) {
       toast("Please enter search images and photos!");
       return;  
-    } onSubmit(query);
+    } onSearch(query);
       setQuery("");
   };
 

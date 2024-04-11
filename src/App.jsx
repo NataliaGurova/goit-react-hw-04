@@ -29,7 +29,9 @@ const App = () => {
     setLoading(true);
     fetchPhotos(query, page)
       .then(({ results, total_pages }) => {
-        setLoading(true)
+        // setLoading(true)
+        console.log(results);
+        
         setImages(prev => [...prev,...results])
         setTotalPages(total_pages)
         setLoading(false)
@@ -39,7 +41,7 @@ const App = () => {
     
   }, [query, page]);
 
-  const handleSubmit = (query) => {
+  const handleSubmitStart = (query) => {
     setPage(1)
     setImages([])
     setTotalPages(0)
@@ -63,9 +65,19 @@ const App = () => {
     setIsOpen(true);
   }
 
+  
+  const block = (modalIsOpen) => {
+        const body = document.querySelector('body');
+        if (modalIsOpen) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = 'auto';
+        }
+    }
+
   return (
     <div>
-      <SearchBar onSubmit={handleSubmit} />
+      <SearchBar onSearch={handleSubmitStart} />
       {loading && <Loader />}
       {error && <ErrorMessage />}
       <ImageGallery images={images} onClick={handleImageClick} />

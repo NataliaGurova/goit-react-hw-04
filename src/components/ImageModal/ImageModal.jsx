@@ -1,4 +1,4 @@
-
+import React, { useEffect } from 'react';
 import Modal from 'react-modal';
 
 const customStyles = {
@@ -29,9 +29,17 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement('#root');
+// Modal.setAppElement('#root');
 
 export const ImageModal = ({ images, isOpen, onRequestClose }) => {
+
+  useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [isOpen]);
 
     return (
 		<Modal
@@ -40,7 +48,9 @@ export const ImageModal = ({ images, isOpen, onRequestClose }) => {
       contentLabel="Image Modal"
       style={customStyles}
     >
-      <img src={images} alt="Selected Image" />
+      <div style={{ overflow: 'hidden' }}>
+                <img src={images} alt="Selected Image" />
+            </div>
     </Modal>
   )
 }
