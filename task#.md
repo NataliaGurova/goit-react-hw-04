@@ -177,3 +177,16 @@ const API_KEY = 'CiYbYfeKy1jv8indJhhf6vm3xolSsoXblOTrxmzC1Go';
     } else {
       
   }
+--------------------------------
+  SCROLLING
+
+  import {useRef } from 'react';
+  const loadMoreBtnRef = useRef(null);
+  useEffect(() => {
+    if (loadMoreBtnRef.current) {
+      loadMoreBtnRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [images]);
+
+  В розмітку пишемо
+  <div ref={loadMoreBtnRef} />

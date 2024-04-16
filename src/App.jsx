@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fetchPhotos } from './apiService/imageApi';
 import SearchBar from "./components/SearchBar/SearchBar";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
@@ -8,12 +8,11 @@ import { Loader } from "./components/Loader/Loader";
 import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage";
 import { ImageModal } from "./components/ImageModal/ImageModal";
 import { Toaster } from "react-hot-toast";
-// import './App.css'
 
 
 
 const App = () => {
-	// 1. Оголошуємо стан
+  // 1. Оголошуємо стан
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const [images, setImages] = useState([]);
@@ -22,14 +21,15 @@ const App = () => {
   const [error, setError] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null); // Додайте стан для вибраного зображення
   const [modalIsOpen, setIsOpen] = useState(false);
-
+  const scrolling = useRef(null);
+  
 
   useEffect(() => {
     if (!query) return;
     setLoading(true);
     fetchPhotos(query, page)
       .then(({ results, total_pages }) => {
-        // setLoading(true)
+
         console.log(results);
         
         setImages(prev => [...prev,...results])
@@ -73,7 +73,14 @@ const App = () => {
         } else {
             body.style.overflow = 'auto';
         }
-    }
+  }
+  
+  useEffect(() => {
+  if (scrolling.current) {
+    scrolling.current.scrollIntoView({ behavior: 'smooth' });
+  }
+}, [images]);
+
 
   return (
     <div>
@@ -86,19 +93,12 @@ const App = () => {
       isOpen={modalIsOpen} 
         onRequestClose={closeModal} />
       <Toaster />
+      <div ref={scrolling} />
     </div>
   );
 }
 
 export default App
-
-
-  // function afterOpenModal() {
-  //   let subtitle;
-  //   // references are now sync'd and can be accessed.
-  //   subtitle.style.color = '#f00';
-  // }
-
 
 
 // onClick={() => onClick(image.urls.small, image.urls.regular, image.alt_description)}
